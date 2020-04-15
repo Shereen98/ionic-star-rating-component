@@ -1,0 +1,7 @@
+{
+  "name": "rate-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
