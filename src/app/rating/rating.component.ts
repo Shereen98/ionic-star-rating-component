@@ -10,7 +10,7 @@ export class RatingComponent implements OnInit {
 
   @Output() ratingChange: EventEmitter<number> = new EventEmitter();
 
-  numberArray = [1,2,3,4,5]
+  numberArray = [1, 2, 3, 4, 5];
 
   COLOR = {
     GREY: "#E0E0E0",
@@ -19,9 +19,7 @@ export class RatingComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+  ngOnInit(): void {}
 
   rate(index: number) {
     // function used to change the value of our rating
@@ -31,17 +29,11 @@ export class RatingComponent implements OnInit {
   }
 
   getColor(index: number) {
-
-    if (this.isAboveRating(index)) {
+    if (this.isAboveRating(index) || !this.numberArray.includes(this.rating)) {
       return this.COLOR.GREY;
-
-    } else if (this.rating >= 1 && this.rating <= 5) {
-      return this.COLOR.YELLOW;
-
     } else {
-      return this.COLOR.GREY;
+      return this.COLOR.YELLOW;
     }
-
   }
 
   isAboveRating(index: number): boolean {
